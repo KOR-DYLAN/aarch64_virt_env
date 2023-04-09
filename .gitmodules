@@ -4,3 +4,6 @@
 [submodule "buildroot"]
 	path = buildroot
 	url = https://github.com/KOR-DYLAN/buildroot.git
+[submodule "linux"]
+	path = linux
+	url = https://github.com/KOR-DYLAN/linux.git
