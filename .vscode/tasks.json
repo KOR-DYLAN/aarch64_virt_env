@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "gnome-terminal",
+            "args": [
+                "--",
+                "make",
+                "run"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run with gdb",
+            "type": "shell",
+            "command": "gnome-terminal",
+            "args": [
+                "--",
+                "make",
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "gen compile commands",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/linux/scripts/clang-tools/gen_compile_commands.py",
+                "-d", "${workspaceFolder}/build/linux",
+                "-o", "${workspaceFolder}/.vscode/compile_commands.json"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
